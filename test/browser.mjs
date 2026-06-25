@@ -14,14 +14,15 @@ import { techTemplateWB, specTemplateWB } from "../src/parse/templates.js";
 const here = dirname(fileURLToPath(import.meta.url));
 const SP = process.env.SP || here;
 const CHROME = join(homedir(), "AppData/Local/ms-playwright/chromium-1228/chrome-win64/chrome.exe");
-const URL_ = "http://localhost:4173/tkp-pdf-generator/";
+const LIVE = process.env.BASE_URL || "";
+const URL_ = LIVE || "http://localhost:4173/tkp-pdf-generator/";
 
 const techPath = join(SP, "tpl_tech.xlsx");
 const specPath = join(SP, "tpl_spec.xlsx");
 writeFileSync(techPath, XLSX.write(techTemplateWB(), { type: "buffer", bookType: "xlsx" }));
 writeFileSync(specPath, XLSX.write(specTemplateWB(), { type: "buffer", bookType: "xlsx" }));
 
-const srv = spawn("npx", ["vite", "preview", "--port", "4173", "--strictPort"], { cwd: join(here, ".."), shell: true });
+const srv = LIVE ? { kill() {} } : spawn("npx", ["vite", "preview", "--port", "4173", "--strictPort"], { cwd: join(here, ".."), shell: true });
 const ready = async () => { for (let i = 0; i < 60; i++) { try { const r = await fetch(URL_); if (r.ok) return true; } catch {} await new Promise((s) => setTimeout(s, 500)); } return false; };
 
 let code = 0;
