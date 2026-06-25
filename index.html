@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>ТКП generator</title>
+  <link rel="icon" href="data:," />
+</head>
+<body>
+  <div class="page">
+    <header class="card head">
+      <span class="pdf-badge">PDF</span>
+      <h1>ТКП generator</h1>
+    </header>
+
+    <section class="card step" data-step="tech">
+      <div class="step-head">
+        <span class="num">1</span>
+        <h2>Загрузите таблицу тех. характеристик</h2>
+        <button type="button" class="tpl" data-tpl="tech">
+          <svg viewBox="0 0 24 24" class="ic"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Скачать шаблон
+        </button>
+      </div>
+      <label class="drop" data-drop="tech">
+        <input type="file" accept=".xlsx,.xls" hidden />
+        <svg viewBox="0 0 24 24" class="cloud"><path d="M7 18a4 4 0 010-8 5 5 0 019.6-1.3A3.5 3.5 0 1117 18H7z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 13v4m0-4l-2 2m2-2l2 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="drop-text">
+          <span class="prompt">Перетащите файл сюда или нажмите для выбора</span>
+          <span class="formats">.xlsx, .xls</span>
+        </span>
+      </label>
+    </section>
+
+    <section class="card step" data-step="spec">
+      <div class="step-head">
+        <span class="num">2</span>
+        <h2>Загрузите таблицы спецификаций</h2>
+        <button type="button" class="tpl" data-tpl="spec">
+          <svg viewBox="0 0 24 24" class="ic"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Скачать шаблон
+        </button>
+      </div>
+      <label class="drop" data-drop="spec">
+        <input type="file" accept=".xlsx,.xls" hidden />
+        <svg viewBox="0 0 24 24" class="cloud"><path d="M7 18a4 4 0 010-8 5 5 0 019.6-1.3A3.5 3.5 0 1117 18H7z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 13v4m0-4l-2 2m2-2l2 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="drop-text">
+          <span class="prompt">Перетащите файл сюда или нажмите для выбора</span>
+          <span class="formats">.xlsx, .xls</span>
+        </span>
+      </label>
+    </section>
+
+    <section class="card step" data-step="schema">
+      <div class="step-head">
+        <span class="num">3</span>
+        <h2>Загрузите схему <span class="opt">(optional)</span></h2>
+      </div>
+      <label class="drop" data-drop="schema">
+        <input type="file" accept=".pdf,.png,.jpg,.jpeg,.svg" hidden />
+        <svg viewBox="0 0 24 24" class="cloud"><path d="M7 18a4 4 0 010-8 5 5 0 019.6-1.3A3.5 3.5 0 1117 18H7z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 13v4m0-4l-2 2m2-2l2 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="drop-text">
+          <span class="prompt">Перетащите файл сюда или нажмите для выбора</span>
+          <span class="formats">.pdf, .png, .jpg, .svg</span>
+        </span>
+      </label>
+    </section>
+
+    <footer class="card foot">
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+      <button id="create" type="button" class="create">
+        <svg viewBox="0 0 24 24" class="ic"><path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6L12 3z" fill="currentColor"/><path d="M19 14l.8 2.2L22 17l-2.2.8L19 20l-.8-2.2L16 17l2.2-.8L19 14z" fill="currentColor"/></svg>
+        Создать
+      </button>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
