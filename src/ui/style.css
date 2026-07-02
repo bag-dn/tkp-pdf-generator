@@ -38,7 +38,8 @@ body {
   box-shadow: 0 1px 2px rgba(16, 24, 40, .04);
 }
 
-.head { display: flex; align-items: center; gap: 16px; }
+.head { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 16px; }
 .pdf-badge {
   display: inline-flex; align-items: center; justify-content: center;
   width: 44px; height: 44px; border-radius: 10px;
@@ -46,6 +47,38 @@ body {
   letter-spacing: .5px;
 }
 .head h1 { margin: 0; font-size: 26px; font-weight: 700; }
+
+.tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #f8fafc;
+}
+.tab {
+  border: none;
+  background: transparent;
+  color: #4a5566;
+  border-radius: 9px;
+  padding: 9px 13px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.tab:hover:not(:disabled) { background: #eef3ff; color: var(--blue); }
+.tab.active { background: var(--blue); color: #fff; }
+.tab:disabled { color: #a3adba; cursor: default; }
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.panel[hidden] { display: none !important; }
 
 .step-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
 .num {
@@ -100,3 +133,38 @@ body {
 }
 .create:hover { background: var(--blue-d); }
 .create:disabled { opacity: .55; cursor: default; }
+
+.format-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.format-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 150px;
+  border: 1px solid var(--drop-border);
+  border-radius: 12px;
+  background: var(--drop);
+  padding: 14px 16px;
+  color: #4a5566;
+  font-weight: 600;
+  cursor: pointer;
+}
+.format-option:has(input:checked) {
+  border-color: var(--blue);
+  background: #f5f8ff;
+  color: var(--text);
+}
+
+@media (max-width: 720px) {
+  .page { padding: 18px 12px 36px; }
+  .card { padding: 18px; }
+  .tabs { width: 100%; overflow-x: auto; justify-content: flex-start; }
+  .step-head { align-items: flex-start; flex-wrap: wrap; }
+  .tpl { margin-left: 38px; }
+  .drop { padding: 22px 18px; align-items: flex-start; }
+  .foot { align-items: stretch; flex-direction: column; }
+  .create { width: 100%; justify-content: center; }
+}
